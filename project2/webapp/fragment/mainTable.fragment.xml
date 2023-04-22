@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:customdata="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table id="mainTable" sticky="HeaderToolbar,ColumnHeaders" alternateRowColors="true" inset="true"
+		items="{ path: 'mainModel>/results', sorter: { path: 'ProductID', descending: true} }" noDataText="{i18n>noData}" growing="true"
+		growingThreshold="100">
+		<headerToolbar>
+			<Toolbar id="ToolbarId">
+				<content>
+				<Button id="butSelectColumns" text="{i18n>selectColumns}" icon="sap-icon://table-column" press="onSelectColumnsPressed"/>
+				<ToolbarSpacer id="ToolbarSpacerId"/>
+				<Button id="butSort" tooltip="{i18n>sort}" icon="sap-icon://sort" press="onSortButtonPressed"/>
+				<Button id="butExport" tooltip="{i18n>exportInExcel}" icon="sap-icon://excel-attachment" press="onDataExport"/>
+				</content>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="colProductID" customdata:columnId="colProductID" hAlign="Center" width="9%">
+				<Label id="ProductID" text="ProductID" tooltip="ProductID" design="Bold" wrapping="true"/>
+			</Column>
+			<Column id="colTypeCode" customdata:columnId="colTypeCode" hAlign="Center" width="9%">
+				<Label id="TypeCode" text="TypeCode" tooltip="TypeCode" design="Bold" wrapping="true"/>
+			</Column>
+			<Column id="colCategory" customdata:columnId="colCategory" hAlign="Center" width="6%">
+				<Label id="Category" text="Category" tooltip="Category" design="Bold" wrapping="true"/>
+			</Column>
+			<Column id="colName" customdata:columnId="colName" hAlign="Center" width="9%">
+				<Label id="Name" text="Name" tooltip="Name" design="Bold" wrapping="true"/>
+			</Column>
+			<Column id="colButton" width="16%" hAlign="Right" minScreenWidth="Phone" demandPopin="true" importance="High">
+                <Label id="ColDetailButton" text="" design="Bold" wrapping="false" />
+            </Column>	
+		</columns>
+		<items>
+			<ColumnListItem id="ColumnListItemId" type="Inactive" vAlign="Middle">
+				<cells >
+					<Text id="ProductIDCell" text="{mainModel>ProductID}"/>
+					<Text id="TypeCodeCell" text="{mainModel>TypeCode}"/>
+					<Text id="CategoryCell" text="{mainModel>Category}"/>
+					<Text id="NameCell" text="{mainModel>Name}"/>
+					<Button id="DetailButton" icon="sap-icon://display" tooltip="Display" press="onProductDetail" class="sapUiSmallMarginEnd"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

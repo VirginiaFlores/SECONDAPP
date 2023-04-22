@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="SelectColumnDialog" title="{i18n>selectColumns}">
+		<List id="SelectColumnItem" items="{ColsP13nModel>/}"
+			noDataText="{i18n>noData}"
+			mode="MultiSelect"
+			includeItemInSelection="true"
+			class="sapUiNoContentPadding">
+			<StandardListItem id="SelectColumnLI" title="{ColsP13nModel>text}" selected="{ColsP13nModel>selected}"/>
+		</List>
+		<beginButton>
+			<Button id="applyButSC" press="onApplyP13n" text="{i18n>apply}"/>
+		</beginButton>
+		<endButton>
+			<Button id="cancelButSC" press="onCancelP13n" text="{i18n>cancel}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

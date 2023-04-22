@@ -1,0 +1,19 @@
+{
+  "authenticationMethod": "route",
+  "welcomeFile": "/nsproject2",
+  "routes": [
+    {
+      "source": "^/sap/opu/odata/iwbep/GWSAMPLE_BASIC/(.*)$",
+      "target": "$1",
+      "destination": "S4HANA_Dev",
+      "authenticationType": "none",
+      "csrfProtection": true
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]  
+}

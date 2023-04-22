@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core">
+<table:TreeTable id="addressTable" selectionMode="None" enableColumnReordering="false"
+	rows="{path:'BusinessPartnerModel>/', parameters: {arrayNames:['Address']}}">
+		<table:columns>
+			<table:Column id="ColCity" label="City">
+				<table:template>
+					<m:Text id="CityIDText" text="{BusinessPartnerModel>City}" tooltip="{BusinessPartnerModel>City}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column id="ColPostalCode" label="PostalCode">
+				<table:template>
+					<m:Text id="PostalCodeIDText" text="{BusinessPartnerModel>PostalCode}" tooltip="{BusinessPartnerModel>PostalCode}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column id="ColStreet" label="Street">
+				<table:template>
+					<m:Text id="StreetIDText" text="{BusinessPartnerModel>Street}" tooltip="{BusinessPartnerModel>Street}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column id="ColBuilding" label="Building">
+				<table:template>
+					<m:Text id="BuildingIDText" text="{BusinessPartnerModel>Building}" tooltip="{BusinessPartnerModel>Building}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column id="ColCountry" label="Country">
+                <table:template>
+					<m:Text id="CountryIDText" text="{BusinessPartnerModel>Country}" tooltip="{BusinessPartnerModel>Country}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column id="ColAddressType" label="AddressType">
+				<table:template>
+					<m:Text id="AddressTypeIDText" text="{BusinessPartnerModel>AddressType}" tooltip="{BusinessPartnerModel>AddressType}" wrapping="false"/>
+		        </table:template>
+			</table:Column>
+		</table:columns>
+	</table:TreeTable>
+</core:FragmentDefinition>

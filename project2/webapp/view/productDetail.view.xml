@@ -1,0 +1,114 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" 
+	xmlns:tnt="sap.tnt" xmlns:f="sap.f" controllerName="ns.project2.controller.productDetail">
+	<Page id="detailPageView" class="styleTitlePage" title="Detalle del producto" showNavButton="false">
+		<uxap:ObjectPageLayout id="ObjectPageLayoutID" enableLazyLoading="true" useIconTabBar="true" headerContentPinnable="false" toggleHeaderOnTitleClick="true"
+			showFooter="true">
+			<uxap:headerTitle>
+				<uxap:ObjectPageHeader id="ObjectPageHeaderID" visible="false"></uxap:ObjectPageHeader>
+			</uxap:headerTitle>
+			<uxap:headerContent>
+				<layout:VerticalLayout id="VerticalLayout1ID">
+					<VBox id="VBoxBusinessPartnerID" class="sapUiTinyMarginBottom">
+						<items>
+							<Label id="LabBusinessPartnerID" text="BusinessPartnerID"/>
+							<Input id="BusinessPartnerIDInp" value="{BusinessPartnerModel>/BusinessPartnerID}" tooltip="{BusinessPartnerModel>/BusinessPartnerID}" editable="false"/>
+						</items>
+					</VBox>
+                    <VBox id="VBoxCompanyName" class="sapUiTinyMarginBottom">
+						<items>
+							<Label id="LabCompanyName" text="CompanyName"/>
+							<Input id="CompanyNameInp" value="{BusinessPartnerModel>/CompanyName}" tooltip="{BusinessPartnerModel>/CompanyName}" editable="false"/>
+						</items>
+					</VBox>
+				</layout:VerticalLayout>
+                <layout:VerticalLayout id="VerticalLayout2ID" width="20%">
+					<VBox id="VBoxWebAddress" class="sapUiTinyMarginBottom">
+						<Label id="labWebAddress" text="WebAddress"/>
+						<Input id="WebAddressInp" value="{BusinessPartnerModel>/WebAddress}" tooltip="{BusinessPartnerModel>/WebAddress}"  editable="false"></Input>
+					</VBox>
+					<VBox id="VBoxEmailAddress" class="sapUiTinyMarginBottom" visible="true">
+						<Label id="LabEmailAddress" text="EmailAddress"/>
+						<Input id="EmailAddressInp" value="{BusinessPartnerModel>/EmailAddress}" tooltip="{BusinessPartnerModel>/EmailAddress}" editable="false"></Input>
+					</VBox>
+                </layout:VerticalLayout>
+				<layout:VerticalLayout id="VerticalLayout3ID">
+					<VBox id="VBoxPhoneNumber" class="sapUiTinyMarginBottom">
+						<items>
+							<Label id="LabPhoneNumber" text="PhoneNumber"/>
+							<Input id="PhoneNumberInp" value="{BusinessPartnerModel>/PhoneNumber}" tooltip="{BusinessPartnerModel>/PhoneNumber}" editable="false"/>
+						</items>
+					</VBox>
+					<VBox id="VBoxFaxNumber" class="sapUiTinyMarginBottom">
+						<Label id="LabFaxNumber" text="FaxNumber"/>
+						<Input id="FaxNumberInp" value="{BusinessPartnerModel>/FaxNumber}" tooltip="{BusinessPartnerModel>/FaxNumber}"  editable="false"></Input>
+					</VBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="VerticalLayout4ID">
+					<VBox id="VBoxCreatedAt" class="sapUiTinyMarginBottom">
+						<Label id="LabCreatedAt" text="CreatedAt"/>
+						<Input id="CreatedAtInp" value="{BusinessPartnerModel>/CreatedAt}" editable="false"></Input>
+					</VBox>
+					<VBox id="VBoxChangedAt" class="sapUiTinyMarginBottom">
+						<Label id="LabChangedAt" text="ChangedAt"/>
+						<Input id="ChangedAtInp" value="{BusinessPartnerModel>/ChangedAt}" editable="false"></Input>
+					</VBox>
+                </layout:VerticalLayout>
+		
+			</uxap:headerContent>
+			<uxap:sections>
+                
+                <uxap:ObjectPageSection id="ObjectPageSectionID">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection id="ObjectPageSubSectionID" title="Address Data">
+							<uxap:blocks>
+								<layout:BlockLayout id="BlockLayoutID" background="Default" visible="true" class="sapUiNoContentPadding">
+									<layout:content>
+										<layout:BlockLayoutRow id="BlockLayoutRowID" scrollable="false" class="sapUiLargeMarginBegin sapUiLargeMarginBottom sapUiMediumeMarginTop">
+											<layout:content>
+												<layout:BlockLayoutCell id="BlockLayoutCellID" width="3"  titleAlignment="Begin" class="sapUiNoContentPadding rowBlockTitle">
+													<layout:content>
+														<core:Fragment fragmentName="ns.project2.fragment.addressTable" type="XML"/>
+													</layout:content>
+												</layout:BlockLayoutCell>
+											</layout:content>
+										</layout:BlockLayoutRow>
+									</layout:content>
+								</layout:BlockLayout>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+
+				<uxap:ObjectPageSection id="ObjectPageSection2ID">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection id="ObjectPageSubSection2ID" title="Tree Table">
+							<uxap:blocks>
+								<layout:BlockLayout id="BlockLayout2ID" background="Default" visible="true" class="sapUiNoContentPadding">
+									<layout:content>
+										<layout:BlockLayoutRow id="BlockLayoutRow2ID" scrollable="false" class="sapUiLargeMarginBegin sapUiLargeMarginBottom sapUiMediumeMarginTop">
+											<layout:content>
+												<layout:BlockLayoutCell id="BlockLayoutCell2ID" width="3"  titleAlignment="Begin" class="sapUiNoContentPadding rowBlockTitle">
+													<layout:content>
+														<core:Fragment fragmentName="ns.project2.fragment.addressTreeTable" type="XML"/>
+													</layout:content>
+												</layout:BlockLayoutCell>
+											</layout:content>
+										</layout:BlockLayoutRow>
+									</layout:content>
+								</layout:BlockLayout>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+
+			</uxap:sections>
+			<uxap:footer>
+				<OverflowToolbar id="BAR_BTNS" design="Auto">
+					<content>                        
+						<Button id="back" text="Volver" type="Emphasized" icon="sap-icon://nav-back" press="onBackProduct" class="sapUISmallMarginBegin"/>
+                    </content>
+				</OverflowToolbar>
+			</uxap:footer>
+		</uxap:ObjectPageLayout>
+	</Page>
+</mvc:View>

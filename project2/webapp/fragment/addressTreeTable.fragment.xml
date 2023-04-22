@@ -1,0 +1,38 @@
+<core:FragmentDefinition 
+	xmlns:m="sap.m" 
+	xmlns="sap.ui.table"
+	xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core">
+<TreeTable id="addressTreeTable" selectionMode="None" enableColumnReordering="false"
+	rows="{path:'SalesOrderModel>/', parameters: {arrayNames:['ToLineItems']}}">
+		<extension>
+            <m:OverflowToolbar id="overFlowToolbarButton">
+                <m:ToolbarSpacer id="toolbarSpaceRight"/>
+                <m:Button id="butCollapse" icon="sap-icon://collapse-all" tooltip="{i18n>collapseAll}" press="onCollapseAll"/>
+                <m:Button id="butExpand" icon="sap-icon://expand-all" tooltip="{i18n>expandAll}" press="onExpandAll"/>
+            </m:OverflowToolbar>
+        </extension>
+		<columns>
+			<Column id="ColProductID" label="SalesOrderID">
+				<template>
+					<m:Text id="ProductIDText" text="{= ${SalesOrderModel>CustomerID} || ${SalesOrderModel>SalesOrderID} }" tooltip="{SalesOrderModel>ProductID}" wrapping="false"/>
+				</template>
+			</Column>
+			<Column id="ColSalesOrderID" label="CustomerName">
+				<template>
+					<m:Text id="SalesOrderIDText" text="{= ${SalesOrderModel>CustomerName} || ${SalesOrderModel>Note} }" tooltip="{SalesOrderModel>SalesOrderID}" wrapping="false"/>
+				</template>
+			</Column>
+			<Column id="ColItemPosition" label="ProductID">
+				<template>
+					<m:Text id="ItemPositionText" text="{= ${SalesOrderModel>ProductID}}" tooltip="{SalesOrderModel>ProductID}" wrapping="false"/>
+				</template>
+			</Column>
+			<Column id="ColNote" label="Quantity">
+				<template>
+					<m:Text id="NoteText" text="{= ${SalesOrderModel>Quantity}}" tooltip="{SalesOrderModel>Quantity}" wrapping="false"/>
+				</template>
+			</Column>
+		</columns>
+	</TreeTable>
+</core:FragmentDefinition>
