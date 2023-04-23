@@ -1,0 +1,26 @@
+<mvc:View controllerName="ns.project2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core">
+    <Shell id="shell" appWidthLimited="false">
+		<f:DynamicPage id="dynamicPageId" headerExpanded="true">
+			<f:title>
+				<f:DynamicPageTitle id="DynamicPageTitleID">
+					<f:heading>
+						<Title id="titleApp" text="First Fiori Application"/>
+					</f:heading>
+				</f:DynamicPageTitle>
+			</f:title>
+			<f:header>
+				<f:DynamicPageHeader id="DynamicPageHeaderId" pinnable="false">
+					<f:content>
+						<core:Fragment fragmentName="ns.project2.fragment.mainFilter" type="XML"/>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<core:Fragment fragmentName="ns.project2.fragment.mainTable" type="XML"/>
+			</f:content>
+		</f:DynamicPage>
+	</Shell>
+</mvc:View>
+

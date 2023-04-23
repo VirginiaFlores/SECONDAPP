@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar">
+	<fb:FilterBar id="LcaFilterBar" search="onFilter" showClearOnFB="true" showFilterConfiguration="false" clear="onClearFilters"
+		showRestoreButton="false" showClearButton="true" useToolbar="false">
+		<fb:filterGroupItems>
+			<fb:FilterGroupItem groupName="LcaId" name="LcaId" label="ProductID" visibleInFilterBar="true">
+				<fb:control>
+					<MultiInput id="ProductID_MI" width="12rem" showValueHelp="false" tooltip="ProductID">
+						<customData>
+							<core:CustomData key="databaseId" value="ProductID"/>
+						</customData>
+					</MultiInput>
+				</fb:control>
+			</fb:FilterGroupItem>
+			<fb:FilterGroupItem visible="true" groupName="dateGroup" name="dateName" label="CreateAt" visibleInFilterBar="true">
+				<fb:control>
+					<DateRangeSelection id="dateSelectorId" width="100%" displayFormat="dd/MM/yyyy">
+						<customData>
+							<core:CustomData key="databaseId" value="ChangedAt"/>
+						</customData>
+					</DateRangeSelection>
+				</fb:control>
+			</fb:FilterGroupItem>
+			<fb:FilterGroupItem visible="true" groupName="typeCodeGroup" name="typeCodeName" label="TypeCode" visibleInFilterBar="true">
+				<fb:control>
+					<Select id="typeCodeId_SL" items="{path: 'TypeCodeModel>/', sorter: {path: 'TypeCode'}}">
+						<core:Item key="{TypeCodeModel>TypeCode}" text="{TypeCodeModel>TypeCode}"/>
+					</Select>
+			</fb:control>
+			</fb:FilterGroupItem>
+			<fb:FilterGroupItem groupName="SupplierGroup" name="SupplierName" label="SupplierID" visibleInFilterBar="true">
+				<fb:control>
+                    <MultiComboBox id="SupplierId_CB" showSecondaryValues="true" placeholder="Seleccione una opción"
+						items="{SupplierModel>/}">
+						<core:ListItem key="{SupplierModel>SupplierID}" text="{SupplierModel>SupplierID}"
+							additionalText="{SupplierModel>SupplierName}"/>						
+						<customData>
+							<core:CustomData key="databaseId" value="SupplierID"/>
+						</customData>
+					</MultiComboBox>
+				</fb:control>
+			</fb:FilterGroupItem>
+		</fb:filterGroupItems>
+	</fb:FilterBar>
+</core:FragmentDefinition>
