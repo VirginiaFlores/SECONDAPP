@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog id="docDialog" title="{i18n>loadDocument}">
+		<VBox id="VBoxDialog" height="auto" class="sapUiTinyMargin">
+			<Label id="descriptionDocDialog" class="sapUiTinyMarginTop" text="{i18n>description}" required="true"/>
+			<TextArea id="docDescription" width="100%" maxLength="255"/>
+		</VBox>
+		<beginButton>
+			<Button id="acceptButton" press="onUploadSelectedButton" text="{i18n>accept}"/>
+		</beginButton>
+		<endButton>
+			<Button id="cancelButton" press="onCancelUpload" text="{i18n>cancel}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

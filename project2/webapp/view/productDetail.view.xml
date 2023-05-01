@@ -101,6 +101,28 @@
 					</uxap:subSections>
 				</uxap:ObjectPageSection>
 
+				<uxap:ObjectPageSection id="ObjectPageSection3ID">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection id="ObjectPageSubSection3ID" title="Documents">
+							<uxap:blocks>
+								<layout:BlockLayout id="BlockLayout3ID" background="Default" visible="true" class="sapUiNoContentPadding">
+									<layout:content>
+										<layout:BlockLayoutRow id="BlockLayoutRow3ID" scrollable="false" class="sapUiLargeMarginBegin sapUiLargeMarginBottom sapUiMediumeMarginTop">
+											<layout:content>
+												<layout:BlockLayoutCell id="BlockLayoutCell3ID" width="3"  titleAlignment="Begin" class="sapUiNoContentPadding rowBlockTitle">
+													<layout:content>
+														<core:Fragment fragmentName="ns.project2.fragment.annexesTable" type="XML"/>
+													</layout:content>
+												</layout:BlockLayoutCell>
+											</layout:content>
+										</layout:BlockLayoutRow>
+									</layout:content>
+								</layout:BlockLayout>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+
 			</uxap:sections>
 			<uxap:footer>
 				<OverflowToolbar id="BAR_BTNS" design="Auto">

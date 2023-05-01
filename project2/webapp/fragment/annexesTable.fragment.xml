@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<u:FileUploader
+		id="fileUploader"
+		buttonOnly="true"
+		buttonText="{i18n>addDoc}"
+		icon="sap-icon://upload"
+		change="onSelectFile"/>	
+		<Table id="annexesTable" width="100%" sticky="HeaderToolbar,ColumnHeaders" alternateRowColors="true"
+			items="{ 
+				path: 'DocumentsModel>/',
+				templateShareable:true
+			}" 
+			popinLayout="GridSmall" includeItemInSelection="true" fixedLayout="true" contextualWidth="Auto" growing="true" growingThreshold="1">
+		<columns>
+			<Column id="col1" width="20%">
+				<Text id="columnDocs1" text="{i18n>columnDocs1}" />
+			</Column>
+			<Column id="col2" width="20%">
+				<Text id="columnDocs2" text="{i18n>columnDocs2}"/>
+			</Column>
+			<Column id="col3" width="10%">
+				<Text id="columnDocs3" text="{i18n>columnDocs3}"/>
+			</Column>
+			<Column id="col4" width="30%">
+				<Text id="columnDocs4" text="{i18n>columnDocs4}"/>
+			</Column>
+			<Column id="col5" width="12%">
+				<Text id="columnDocs5" text="{i18n>columnDocs5}"/>
+			</Column>
+            <Column id="col6" width="7%">
+    			<Text id="colDeleteButton" text=""/>
+			</Column>	
+		</columns>
+		<items>
+			<ColumnListItem id="docColListItem">
+				<cells>
+                    <Label id="fileNameId" text="{DocumentsModel>/fileName}" tooltip="{DocumentsModel>/fileName}" design="Bold"/>
+                    <Label id="fileContentId" text="{DocumentsModel>/fileContent}" tooltip="{DocumentsModel>/fileContent}"/>
+                    <Label id="descriptionID" text="{DocumentsModel>/description}" tooltip="{DocumentsModel>/description}"/>
+                    <Text id="creationDateId" text="{path:'DocumentsModel>/createDate' , formatter: '.formatter.formatDate'}" tooltip="{path:'DocumentsModel>/createDate' , formatter: '.formatter.formatDate'}"/>
+					<Text id="createUserId" text="{DocumentsModel>/createUser}" tooltip="{DocumentsModel>/userNcreateUserame}"/>
+                    <Button id="delButton" icon="sap-icon://delete" tooltip="{i18n>delete}" press="onDeleteAnnex"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

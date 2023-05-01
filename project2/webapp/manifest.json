@@ -103,6 +103,11 @@
           "type": "sap.ui.model.json.JSONModel",
           "settings": {},
           "preload": false
+      },
+      "DocumentsModel": {
+          "type": "sap.ui.model.json.JSONModel",
+          "settings": {},
+          "preload": false
       }
     },
     "resources": {
